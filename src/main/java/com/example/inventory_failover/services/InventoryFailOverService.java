@@ -10,4 +10,6 @@ import java.util.UUID;
 public interface InventoryFailOverService {
 
     BeerInventoryDto getInventoryDtoMock(UUID beerId) ;
+
+    BeerInventoryDto getInventoryDtoMock() ;
 }

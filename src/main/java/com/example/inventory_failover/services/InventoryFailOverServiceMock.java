@@ -11,9 +11,18 @@ public class InventoryFailOverServiceMock implements InventoryFailOverService{
 
     @Override
     public BeerInventoryDto getInventoryDtoMock(UUID beerId) {
+        return createDummyInventoryDto();
+    }
+
+    @Override
+    public BeerInventoryDto getInventoryDtoMock() {
+        return createDummyInventoryDto();
+    }
+
+    private static BeerInventoryDto createDummyInventoryDto() {
         return BeerInventoryDto.builder()
                 .id(UUID.randomUUID())
-                .beerId(beerId)
+                .beerId(UUID.fromString("00000000-0000-0000-0000-000000000000"))
                 .quantityOnHand(999)
                 .lastModifiedDate(OffsetDateTime.now())
                 .createdDate(OffsetDateTime.now())
